@@ -70,6 +70,18 @@
 
 				rectLightHelper = new RectAreaLightHelper( rectLight );
 				rectLight.add( rectLightHelper );
+				
+				/*const loader = new Rhino3dmLoader();
+				loader.setLibraryPath( 'jsm/libs/rhino3dm/' );
+
+				loader.load( 'models/3dm/Rhino_Logo.3dm', function ( object ) {
+
+					scene.add( object );
+					initGUI( object.userData.layers );*/
+					
+				var loader = new THREE.OBJLoader(); 
+					loader.load(
+						'Vasconcelos Model 1.obj';
 
 				const geoFloor = new THREE.BoxBufferGeometry( 2000, 0.1, 2000 );
 				const matStdFloor = new THREE.MeshStandardMaterial( { color: 0x808080, roughness: 0, metalness: 0 } );
@@ -78,7 +90,7 @@
 
 				const matStdObjects = new THREE.MeshStandardMaterial( { color: 0xA00000, roughness: 0, metalness: 0 } );
 
-				const geoBox = new THREE.BoxBufferGeometry( Math.PI, Math.sqrt( 2 ), Math.E );
+				/*const geoBox = new THREE.BoxBufferGeometry( Math.PI, Math.sqrt( 2 ), Math.E );
 				const mshStdBox = new THREE.Mesh( geoBox, matStdObjects );
 				mshStdBox.position.set( 0, 5, 0 );
 				mshStdBox.rotation.set( 0, Math.PI / 2.0, 0 );
@@ -98,7 +110,7 @@
 				mshStdKnot.position.set( 5, 5, 0 );
 				mshStdKnot.castShadow = true;
 				mshStdKnot.receiveShadow = true;
-				scene.add( mshStdKnot );
+				scene.add( mshStdKnot );*/
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.target.copy( mshStdBox.position );
